@@ -81,7 +81,7 @@
                             stroke-width="2"
                             d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                         </svg>
-                       <span>1</span>
+                       <span id="life">5</span>
                       </button>
                       <button class="btn rounded-full bg-purple-300 text-black px-4">
                         Score
@@ -97,7 +97,7 @@
                             stroke-width="2"
                             d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                         </svg>
-                        <span>1</span>
+                        <span id="score">0</span>
                         
                       </button>
                   </div>
@@ -105,13 +105,14 @@
            </div>
         </section>
         <!-- Score Section -->
-        <section class="score flex justify-center items-center min-h-screen hidden">
+        <section id="final-score" class="flex justify-center items-center min-h-screen hidden">
             <div class="text-white text-center space-y-8 bg-[#FFFFFF33] p-4 rounded-xl">
+                <h4 class="text-4xl">Game Over!</h4>
                 <h1 class="text-8xl text-center">
                     <span>Score :</span>
                     <span>14</span>
                 </h1>
-                <button class="btn ">Play Again</button>
+                <button onclick="play()" class="btn">Play Again</button>
                 <p>Practice makes you pro</p>
             </div>
         </section>
