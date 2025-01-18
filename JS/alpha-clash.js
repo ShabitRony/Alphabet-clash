@@ -38,9 +38,7 @@ function handlePressKey(event){
    
     removeBackgroundColorById(showElement);
     continueGame();
-    const currentScore = getTextElementValue('score')
-    const newScore = currentScore+1;
-    
+    updateScore();
     
  }else{
     console.log("You lost a life");

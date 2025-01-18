@@ -29,35 +29,35 @@ function getARandomAlphabet(){
     }
 
     function getTextElementValue(element){
-            const element =document.getElementById(element);
-            const elementText = element.innerText;
+            const elementId =document.getElementById(element);
+            const elementText = elementId.innerText;
             return parseFloat(elementText)
     }
 
-    // function updateScore(){
-    // //     const currentScore = document.getElementById('score');
-    // //     const scoreText = currentScore.innerText;
-    // //     const score = parseFloat(scoreText);
-    // //     console.log(score);
+    function updateScore(){
+        const currentScore = document.getElementById('score');
+        const scoreText = currentScore.innerText;
+        const score = parseFloat(scoreText);
+        console.log(score);
 
-    // //     const newScore = score +1;
+        const newScore = score +1;
 
-    // //    currentScore.innerText = newScore;
+       currentScore.innerText = newScore;
 
     // const score = document.getElementById('score');
     // const scoreText = score.innerText;
     // const newScore = parseFloat(scoreText)+1;
     // score.innerText = newScore;   
-    // }
-    // function minusLife(){
-    //     const minusScore = document.getElementById('life');
-    //     const scoreText = minusScore.innerText;
-    //     const newScore = parseFloat(scoreText)-1;
-    //     minusScore.innerText = newScore;
-    //     if(newScore === 0){
-    //         gameOver();
-    //     }
-    // }
+    }
+    function minusLife(){
+        const minusScore = document.getElementById('life');
+        const scoreText = minusScore.innerText;
+        const newScore = parseFloat(scoreText)-1;
+        minusScore.innerText = newScore;
+        if(newScore === 0){
+            gameOver();
+        }
+    }
 
     function gameOver(){
         hideElementById('playground-section');
