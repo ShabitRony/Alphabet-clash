@@ -1,9 +1,9 @@
-function hideElementById(element){
-    const hide = document.getElementById(element);
+function hideElementById(elementId){
+    const hide = document.getElementById(elementId);
     hide.classList.add('hidden');
 }
-function showElementById(element){
-    const show = document.getElementById(element);  
+function showElementById(elementId){
+    const show = document.getElementById(elementId);  
     show.classList.remove('hidden');
 }
 
@@ -18,48 +18,63 @@ function getARandomAlphabet(){
     // console.log(alphabets[index]);
 }
 
-    function setBackgroundColorById(element){
-        const elementById = document.getElementById(element);
+    function setBackgroundColorById(elementId){
+        const elementById = document.getElementById(elementId);
         elementById.classList.add('bg-orange-400');
     }
 
-    function removeBackgroundColorById(element){
-        const elementById = document.getElementById(element);
-        elementById.classList.remove('bg-orange-400');
+    function removeBackgroundColorById(elementId){
+        const element = document.getElementById(elementId);
+        element.classList.remove('bg-orange-400');
     }
 
-    function getTextElementValue(element){
-            const elementId =document.getElementById(element);
-            const elementText = elementId.innerText;
+    function getTextElementValue(elementId){
+            const elementById =document.getElementById(elementId);
+            const elementText = elementById.innerText;
             return parseFloat(elementText)
     }
 
-    function updateScore(){
-        const currentScore = document.getElementById('score');
-        const scoreText = currentScore.innerText;
-        const score = parseFloat(scoreText);
-        console.log(score);
+    // function updateScore(){
+    //     const currentScore = document.getElementById('score');
+    //     const scoreText = currentScore.innerText;
+    //     const score = parseFloat(scoreText);
+    //     console.log(score);
 
-        const newScore = score +1;
+    //     const newScore = score +1;
 
-       currentScore.innerText = newScore;
+    //    currentScore.innerText = newScore;
 
-    // const score = document.getElementById('score');
-    // const scoreText = score.innerText;
-    // const newScore = parseFloat(scoreText)+1;
-    // score.innerText = newScore;   
+    // // const score = document.getElementById('score');
+    // // const scoreText = score.innerText;
+    // // const newScore = parseFloat(scoreText)+1;
+    // // score.innerText = newScore;   
+    // // }
+    // function minusLife(){
+    //     const minusScore = document.getElementById('life');
+    //     const scoreText = minusScore.innerText;
+    //     const newScore = parseFloat(scoreText)-1;
+    //     minusScore.innerText = newScore;
+    //     if(newScore === 0){
+    //         gameOver();
+    //     }
+    // }
+
+    function getTextElementValueById(elementId){
+        const element = document.getElementById(elementId);
+        const elementText = element.innerText;
+        const value =  parseFloat(elementText);
+        return value
     }
-    function minusLife(){
-        const minusScore = document.getElementById('life');
-        const scoreText = minusScore.innerText;
-        const newScore = parseFloat(scoreText)-1;
-        minusScore.innerText = newScore;
-        if(newScore === 0){
-            gameOver();
-        }
+    function setTextElementById(elementId , value){
+        const element = document.getElementById(elementId);
+        element.innerText = value;
+    }
+    function getElementTextById(elementId){
+        const element = document.getElementById(elementId);
+        const elementText = element.innerText;
+        return elementText;
     }
 
-    function gameOver(){
-        hideElementById('playground-section');
-        showElementById('final-score')
-    }
+    
+
+   

@@ -12,6 +12,10 @@ function play(){
     hideElementById('home');
     showElementById('playground-section');
     hideElementById('final-score')
+    setTextElementById('life',5)
+    setTextElementById('score',0)
+    setTextElementById('total-score',0)
+    
     continueGame();
 }
 
@@ -27,26 +31,52 @@ function continueGame(){
 
 function handlePressKey(event){
     const eventKey= event.key;
-
+    if(eventKey ==='Escape'){
+        gameOver();
+    }
    const show = document.getElementById('show-alphabet')
    const showElement = show.innerText.toLowerCase();
    console.log(showElement);
+
    
    
  if(eventKey == showElement){
     console.log("You got the alphabet");
-   
+    const currentScore = getTextElementValue('score')
+    const newScore = currentScore + 1;
+    setTextElementById('score' , newScore)
+    setTextElementById('total-score',newScore)
     removeBackgroundColorById(showElement);
     continueGame();
-    updateScore();
+    
+    // updateScore();
+   
+
+ 
     
  }else{
-    console.log("You lost a life");
-    minusLife();
-    
+    const updateLife = getTextElementValue('life');
+    const newLife = updateLife - 1;
+    setTextElementById('life',newLife);
+    // console.log("You lost a life");
+    // minusLife();
+    if(newLife == 0){
+        gameOver();
+        setButton();
+    }
  }
 
     
 }
 document.addEventListener('keyup',handlePressKey)
 
+
+function gameOver(){
+    hideElementById('playground-section');
+    showElementById('final-score');  
+}   
+function setButton(){
+    const currentAlphabet = getElementTextById('show-alphabet');
+    // console.log(currentAlphabet);
+    removeBackgroundColorById(currentAlphabet);
+}
